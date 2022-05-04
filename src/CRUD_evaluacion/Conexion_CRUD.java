@@ -80,7 +80,7 @@ public class Conexion_CRUD {
             stmt = cone.createStatement();
             stmt.executeQuery(sqlQueryStmt);
             try(ResultSet miResultSet = stmt.executeQuery(sqlQueryStmt)){
-                if(miResultSet.next());{
+                if(miResultSet.next()) {
                    ResultSetMetaData metaData= miResultSet.getMetaData();
                    int numColumnas = metaData.getColumnCount();
                    System.out.println("<< REGISTROS ALMACENADOS >>");
@@ -98,7 +98,7 @@ public class Conexion_CRUD {
                     System.out.println();
                 }while (miResultSet.next());
                 System.out.println();
-            } else {
+            } else  {
                 System.out.println("No se han encontrado registros"); 
             }
             miResultSet.close();

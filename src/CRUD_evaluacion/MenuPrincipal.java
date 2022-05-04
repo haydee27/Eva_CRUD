@@ -9,7 +9,7 @@ public class MenuPrincipal {
         desplegarMenu();
     }
 
-    public static void desplegarMenu() {
+    public static void desplegarMenu() throws SQLException {
         Scanner OS = new Scanner (System.in);
         String OM;
         
@@ -28,7 +28,7 @@ public class MenuPrincipal {
         //Desplegando menu
         switch (OM){
             case "1":
-                //Create c = new Create();
+                Create c = new Create();
             break;
             case "2":
                 //Read r = new Read();
