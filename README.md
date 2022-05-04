@@ -1,6 +1,6 @@
 # Eva_CRUD
  
- Estudiantes: Haydee Abigail Bonilla Reyes(Master) 
+ Estudiantes: Haydee Abigail Bonilla Reyes( Scrum Master) 
               Genesis Astrid Gomez Vasquez (Developer)
               Jorge Luis Garcia Barahona (Developer)
  Facilitador:  Ing. Manuel de Jesús Gámez López
