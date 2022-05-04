@@ -4,7 +4,7 @@ package CRUD_evaluacion;
 import java.sql.*;
 
 public class Conexion_CRUD {
-    private final String servidor = "jdbc:mysql://127.0.0.1:3306/bd_registro_estudiante";
+    private final String servidor = "jdbc:mysql://localhost:3306/bd_registro_estudiante";
     private final String usuario = "root";
     private final String clave = "";
     private final String driverConector = "com.mysql.jdbc.Driver";
