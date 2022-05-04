@@ -1,13 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package CRUD_evaluacion;
 
-/**
- *
- * @author MINEDUCYT
- */
+import java.sql.SQLException;
+
 public class Read {
-    
+    public Read() throws SQLException {
+        System.out.println("<< CONSULTA DE REGISTRO >>");
+        mostrarResultados();
+    }
+
+    private void mostrarResultados() throws SQLException {
+        try{
+            Conexion_CRUD utilerias = new Conexion_CRUD();
+            String tabla = "tb_estudiante";
+            String CamposTabla = "*";
+            String condicionBuscar= "";
+            
+            utilerias.desplegarRegistros(tabla, CamposTabla, condicionBuscar);
+            
+            
+        }catch(SQLException e) {
+            System.out.println("Ha ocurrido el siguiente error: " + e.getMessage()); 
+        }finally{
+            MenuPrincipal.desplegarMenu();
+        }
+    }
 }

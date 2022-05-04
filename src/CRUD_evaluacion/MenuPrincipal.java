@@ -31,13 +31,13 @@ public class MenuPrincipal {
                 Create c = new Create();
             break;
             case "2":
-                //Read r = new Read();
+                Read r = new Read();
             break;  
             case "3":
-                //Update u = new Update();
+                Update u = new Update();
             break;
             case "4":
-                //Delete d = new Delete();
+                Delete d = new Delete();
             break;
             case "5":
                 System.exit(0);
