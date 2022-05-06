@@ -14,7 +14,7 @@ public class Delete {
         System.out.println("Ingresar el id del registro: ");
         String idestudianteEliminar = l.nextLine();
         
-        String tabla = "tb_estudiante";
+        String tabla = "bd_estudiante";
         String campos = "*";
         String condicion = "id_estudiante = " + idestudianteEliminar;
         utilerias.desplegarRegistros(tabla, campos, condicion);

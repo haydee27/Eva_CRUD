@@ -15,10 +15,14 @@ public class Update {
         System.out.println("Ingresar registro a modificar: ");
         est.setId_estudiante(l.nextInt());
         
-        String tablaBuscar = "tb_estudiante";
+        String tablaBuscar = "bd_estudiante";
         String CamposBuscar = "id_estudiante, carnet_estudiante, nom_estudiante, ape_estudiante, edad_estudiante";
         String condicionBuscar = "id_estudiante = " + est.getId_estudiante();
         utilerias.desplegarRegistros(tablaBuscar, CamposBuscar, condicionBuscar);
+        
+        
+        System.out.println("carnet: ");
+        est.setCarnet_estudiante(l.next());
         
         System.out.println("Nombre: ");
         est.setNomEstudiante(l.next());
@@ -26,15 +30,12 @@ public class Update {
         System.out.println("Apellido: ");
         est.setApeEstudiante(l.next());
         
-        System.out.println("carnet: ");
-        est.setCarnet_estudiante(l.next());
-        
         System.out.println("Edad: ");
         est.setEdad_estudiante(l.nextInt());
         
-        String tabla = "tb_estudiante";
-        String camposValoresNuevos = "nom_estudiante= '" + est.getNomEstudiante() + "', ape_estudiante= '" + est.getApeEstudiante()
-        + "', carnet_estudiante '" + est.getCarnet_estudiante() + "',edad_estudiante '" + est.getEdad_estudiante();
+        String tabla = "bd_estudiante";
+        String camposValoresNuevos ="carnet_estudiante= '" + est.getCarnet_estudiante() + "', nom_estudiante= '" + est.getNomEstudiante() + "', ape_estudiante= '" + est.getApeEstudiante()
+        +  "',edad_estudiante= '" + est.getEdad_estudiante()+"'";
         
         utilerias.actualizarEliminarRegistros(tabla, camposValoresNuevos, condicionBuscar);
         System.out.println("Modificar correctamente!");

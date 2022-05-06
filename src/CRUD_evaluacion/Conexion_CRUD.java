@@ -29,10 +29,10 @@ public class Conexion_CRUD {
         Conexion_CRUD Conectar = new Conexion_CRUD();
         Connection cone = Conectar.getConnection();
         try{
-            String sqlQueryStmt = "INSERT INTO" + tabla + " (" + camposTabla + ") VALUE (" + ValoresCampos + ");";
+            String sqlQueryStmt = " INSERT INTO " + tabla + "(" + camposTabla + ") VALUE (" + ValoresCampos + ");";
             Statement stmt;
             stmt = cone.createStatement();
-            stmt.execute(sqlQueryStmt);
+            stmt.executeUpdate(sqlQueryStmt);
             
             stmt.close();
             cone.close();
@@ -52,17 +52,17 @@ public class Conexion_CRUD {
            String sqlQueryStmt;
            
            if(ValoresCamposNuevos.isEmpty()){
-               sqlQueryStmt = "DELETE FROM " + tabla + "WHERE" +  condicion + "; ";
+               sqlQueryStmt = " DELETE FROM " + tabla + " WHERE " +  condicion + "; ";
            }else{
-               sqlQueryStmt = "UPDATE" + tabla + "SET" + ValoresCamposNuevos + "WHERE" + condicion + ";";
+               sqlQueryStmt = " UPDATE " + tabla + " SET " + ValoresCamposNuevos + " WHERE " + condicion + ";";
            }
            stmt = cone.createStatement();
            stmt.executeUpdate(sqlQueryStmt);
            stmt.close();
            cone.close();
             
-        }catch(SQLException e){
-            System.out.println("Ha ocurrido el siguiente error: " + e.getMessage());
+        }catch(SQLException ex){
+            System.out.println("Ha ocurrido el siguiente error: " + ex.getMessage());
         }
     }
     
@@ -73,12 +73,13 @@ public class Conexion_CRUD {
             Statement stmt;
             String sqlQueryStmt;
             if(condicionBuscar.equals("")){
-                sqlQueryStmt ="SELECT" + camposBuscar + "FROM" + tablaBuscar + ";";
+                sqlQueryStmt =" SELECT " + camposBuscar + " FROM " + tablaBuscar +";";
             }else{
-                sqlQueryStmt = "SELECT" + camposBuscar + "FROM" + tablaBuscar + "WHERE" + condicionBuscar;
+                sqlQueryStmt = " SELECT " + camposBuscar + " FROM " + tablaBuscar + " WHERE " + condicionBuscar;
             }
             stmt = cone.createStatement();
             stmt.executeQuery(sqlQueryStmt);
+            
             try(ResultSet miResultSet = stmt.executeQuery(sqlQueryStmt)){
                 if(miResultSet.next()) {
                    ResultSetMetaData metaData= miResultSet.getMetaData();
@@ -108,9 +109,9 @@ public class Conexion_CRUD {
             
         }
         
-    }catch (SQLException e){
-            System.out.println("Ha ocurrido el siguiente error: " + e.getMessage());
-    }
+    }catch (SQLException ex){
+            System.out.println("Ha ocurrido el siguiente error: " + ex.getMessage());
+        }
     }
 }
 

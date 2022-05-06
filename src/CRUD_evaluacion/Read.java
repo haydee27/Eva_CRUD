@@ -12,15 +12,15 @@ public class Read {
     private void mostrarResultados() throws SQLException {
         try{
             Conexion_CRUD utilerias = new Conexion_CRUD();
-            String tabla = "tb_estudiante";
+            String tabla = "bd_estudiante";
             String CamposTabla = "*";
             String condicionBuscar= "";
             
             utilerias.desplegarRegistros(tabla, CamposTabla, condicionBuscar);
             
             
-        }catch(SQLException e) {
-            System.out.println("Ha ocurrido el siguiente error: " + e.getMessage()); 
+        }catch(SQLException ex) {
+            System.out.println("Ha ocurrido el siguiente error: " + ex.getMessage()); 
         }finally{
             MenuPrincipal.desplegarMenu();
         }
