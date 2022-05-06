@@ -8,6 +8,7 @@ public class MenuPrincipal {
     public static void main(String[] args) throws SQLException {
         desplegarMenu();
     }
+    
 
     public static void desplegarMenu() throws SQLException {
         Scanner OS = new Scanner (System.in);

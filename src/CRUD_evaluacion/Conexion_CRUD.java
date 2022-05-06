@@ -13,6 +13,7 @@ public class Conexion_CRUD {
     public Conexion_CRUD(){
         try{
             
+            
            Class.forName(driverConector);
            conexion = DriverManager.getConnection(servidor, usuario, clave);
             
